@@ -1,18 +1,29 @@
-html {
-    overflow: hidden;   
-    height: 100%;
-    justify-content: center;
+::-webkit-scrollbar {
+    display: none;
 }
+html {
+    /*overflow-y: hidden;*/
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/img/automatización-industrial.jpg);
+    
+}
+
 *{
     margin: 0;
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.header{
-    overflow: scroll;
-    width: 100%;
+section{
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(automatización-industrial.jpg);
+    /*overflow: scroll;*/
+}
+body{
+    overflow: scroll;
+}
+.header{
+    width: 100%;
 }
 .container{
     max-width: 1500px;
@@ -146,6 +157,11 @@ button{
     box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
     transform: translateY(-2%);
 }
+
+.card-back{
+    display: none;
+}
+
 .parrafostarjetas{
     font-size: 16px;
     margin-top: 0;
@@ -156,7 +172,7 @@ button{
 }
 .servicio{
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 .h1Servicio{
     color: white;
@@ -172,14 +188,73 @@ button{
     color: white;
 }
 
+/*footer*/
+
+footer{
+    /*position: ;*/
+    bottom: 0;
+    width: auto;
+    padding: 2rem;
+    background-color: #0e0e0e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    height: 70px;
+    width: 120px;
+    margin-bottom: 1rem;
+}
+.social-icons-container ,
+.footer-menu-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.social-icon{
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    margin: 1rem;
+}
+.social-icon:hover{
+    background-color: #121212;
+    filter: invert(1);
+}
+.footer-menu-container{
+    list-style-type: none;
+    color: #f2f2f2;
+    font-size: 18px;
+}
+.menu-item{
+    margin: 1rem 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.menu-item:hover{
+    opacity: 1;
+}
+.copyright{
+    color: #f2f2f2;
+    opacity: 0.3;
+    text-align: center;
+}
+
 @media screen and (max-width:700px){
     *{
         padding: 0;
         margin: 0;
-        overflow: hidden;
+    }
+    html{
+        background-size: cover; /* Esto ajusta la imagen para cubrir todo el fondo */
+        /*background-repeat: no-repeat;*/
+        background-attachment: fixed;
     }
     body{
         width: 100%;
+        
         height: 100%;
     }
     h1{
@@ -195,19 +270,21 @@ button{
 
     .container{
         max-width: 100%;
+        height: auto;
         margin: 0px;
         padding: 0 50px 15%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
     }
 
     .header{
         width: 100%;
-        height: 100vh;
-        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(automatización-industrial.jpg);
+        height: auto;
+        /*background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/img/automatización-industrial.jpg);*/
         align-items: center;
-        overflow-x: hidden;
+        /*overflow-y: scroll;*/
     }
 
     .contentInit{
@@ -251,7 +328,7 @@ button{
         height: 0.5%;
         width: 100%;
         margin: 20px;
-        border-radius: 50px;
+        border-radius: 30px;
         overflow: hidden;
         background: #fff;
         box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
@@ -259,27 +336,13 @@ button{
         transition: all 400ms ease;
     }
 
-    /*Animacion tarjetas*/
-    /*@keyframes show{
-        from{
-            opacity: 0;
-            scale: 25%;
-        }
-
-        to{
-            opacity: 1;
-            scale: 100%;
-        }
+    .card:hover{
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+        transform: translateY(-2%);
+        justify-content: center;
+        align-items: center;
     }
-
-    .conteiner{
-        view-timeline-name: --image;
-        view-timeline-axis: block;
-
-        animation-timeline: --image;
-        animation-name: show;
-        animation-range: entry 25% cover 50%;
-    }*/
+    
 
     .parrafostarjetas{
         font-size: 13.6px;
@@ -291,25 +354,25 @@ button{
         display: none;
     }
     .servicio{
-        overflow: scroll;
         width: 100%;
-        height: 100vh;
-        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(automatización-industrial.jpg);
+        height: auto;
     }
     .h1Servicio{
         color: white;
         margin:45px 0px 0px;
     }
-    h3{
-        font-size: 22px;
-        position: relative;
-        left: 0px;
-        top: 25px;
-    }
 
     .contenido{
-        display:none;
+        justify-content: center;
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        font-size: 22px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
+        text-align: center;
     }
+    
     /*BarraSocial*/
     .sidebar{
         display: none;
@@ -326,8 +389,6 @@ button{
         display:block;
         text-align: center;
         padding: 30px 0px 15px;
-    }
-    ul{
         justify-content: center;
     }
     nav ul li{
@@ -361,5 +422,11 @@ button{
         text-align: justify;
         justify-content: center;
     }
-
+    /*Footer*/
+    footer{
+        padding-top: 1rem;
+        padding-left: 0%;
+        padding-right: 0%;
+        padding-bottom: 1rem;
+    }
 }

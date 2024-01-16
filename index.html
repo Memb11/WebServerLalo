@@ -53,7 +53,7 @@
                         <div class="conteiner">
                             <div class="card" id="TablerosElectricos">
                                 <figure>
-                                    <img src="Tipos-de-tableros-electricos.webp" alt="Tableros" class="imagencontacto">
+                                    <img src="/img/TablerosElectricos.webp" alt="Tableros" class="imagencontacto">
                                 </figure>
                                 <div class="contenido">
                                     <h3>Tableros Electricos</h3>
@@ -64,7 +64,7 @@
                         <div class="conteiner" id="Reparacion">
                             <div class="card">
                                 <figure>
-                                    <img src="tout-savoir-systemes-scada.jpeg" alt="tablero electricos" class="imagencontacto">
+                                    <img src="img/Reparacion.jpeg" alt="tablero electricos" class="imagencontacto">
                                 </figure>
                                 <div class="contenido">
                                     <h3>Reparación y Upgrade</h3>
@@ -75,7 +75,7 @@
                         <div class="conteiner" id="MantenciónMotores">
                             <div class="card">
                                 <figure>
-                                    <img src="motor.webp" alt="tablero electricos" class="imagencontacto">
+                                    <img src="/img/motor.webp" alt="tablero electricos" class="imagencontacto">
                                 </figure>
                                 <div class="contenido">
                                     <h3>Mantención de Motores</h3>
@@ -88,7 +88,7 @@
                     <div class="conteiner" id="Packing">
                         <div class="card">
                             <figure>
-                                <img src="uag-19-03-21-conferencia-cristalizacion--1-.jpg" alt="farmaceutica" class="imagencontacto">
+                                <img src="/img/Packing.jpg" alt="farmaceutica" class="imagencontacto">
                             </figure>
                             <div class="contenido">
                                 <h3>Packing</h3>
@@ -99,7 +99,7 @@
                     <div class="conteiner" id="Fabricacion">
                         <div class="card">
                             <figure>
-                                <img src="Cómo-funcionan-las-fresadoras-CNC.jpg" alt="farmaceutica" class="imagencontacto">
+                                <img src="/img/Fabricacion.jpg" alt="farmaceutica" class="imagencontacto">
                             </figure>
                             <div class="contenido">
                                 <h3>Fabricación de piezas</h3>
@@ -110,7 +110,7 @@
                     <div class="conteiner" id="Sensores">
                         <div class="card">
                             <figure>
-                                <img src="Banner-sensores.jpg" alt="tablero electricos" class="imagencontacto">
+                                <img src="/img/Banner-sensores.jpg" alt="tablero electricos" class="imagencontacto">
                             </figure>
                             <div class="contenido">
                                 <h3>Sensores y accionadores</h3>
@@ -121,8 +121,9 @@
                 </div>
             </div>
         </div>
-
+        
     </section>
+
     <section id="contacto">
         <div class="header">
             <div class="navbar">
@@ -171,6 +172,25 @@
             </div>
         </div>
     </section> 
+    <footer id="myFooter">
+        <!--<img src="2023-12-28-085243.jpg" alt="" class="logo">-->
+        <div class="social-icons-container">
+            <a href="" class="social-icon"><i class="fa-brands fa-linkedin fa-lg" style="color: #ffffff;"></i></a>
+            <a href="" class="social-icon"><i class="fa-brands fa-x-twitter fa-lg" style="color: #ffffff;"></i></a>
+            <a href="" class="social-icon"><i class="fa-brands fa-instagram fa-lg" style="color: #ffffff;"></i></a>
+            <a href="" class="social-icon"><i class="fa-solid fa-inbox fa-lg" style="color: #ffffff;"></i></a>
+        </div>
+        <ul class="footer-menu-container">
+            <li class="menu-item">Legal</li>
+            <li class="menu-item">Cookies</li>
+            <li class="menu-item">Privacy</li>
+            <li class="menu-item">Shipping</li>
+            <li class="menu-item">Refounds</li>
+        </ul>
+        <span class="copyright">&copy;2024, Confiabilidad Industrial, todos los derechos reservados.</span>
+    </footer>
+    
+
     
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -179,6 +199,10 @@
 
             // Al cargar la página, activar automáticamente la sección 'Inicio'
             document.getElementById('inicio').style.display = 'block';
+            document.getElementById('contacto').style.display = 'none';
+            document.getElementById('servicio').style.display = 'none';
+            document.getElementById('sobrenosotros').style.display = 'none';
+            //click
             navLinks.forEach(function (link) {
                 link.addEventListener('click', function (event) {
                     event.preventDefault();
@@ -199,6 +223,8 @@
                     // Mostrar la sección correspondiente al enlace clicado
                     var targetSectionId = link.getAttribute('href').substring(1);
                     document.getElementById(targetSectionId).style.display = 'block';
+
+                    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
                 });
             });
         });

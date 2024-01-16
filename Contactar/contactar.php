@@ -1,15 +1,18 @@
 <?php
-    //destinatario
-    $destinatario = 'correoselomar@gmail.com'
 
-    $nombre = $_POST ['nombre'];
-    $asunto = $_POST ['asunto'];
-    $email = $_POST ['email'];
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $header = "Enviado desde la página de Confiabililidad Industrial"
-    $mensajeCompleto = $mensaje . "\nAtentamente: " . $nombre;
+        $nombre = $_POST ['nombre'];
+        $asunto = $_POST ['asunto'];
+        $email = $_POST ['email'];
 
-    mail($destinatario, $asunto, $mensajeCompleto, $header);
-    echo "<script>alert('correo enviado exitosamente')</script>";
-    echo "<script> setTimeout(\"location.href='index.html'\", 1000)</script>";
+        $destinatario = "correoselomar@gmail.com"
+
+        $contenido = "Nombre: $nombre\nCorreo: $correo\nMensaje: $mensaje";
+
+        mail($destinatario, $asunto, $contenido);
+
+    }
+
+
 ?>
