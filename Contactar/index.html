@@ -12,7 +12,7 @@
     <div class="wrapper">
         <div>
             <div class="header">
-                <a class="salir" href="/index.html">
+                <a class="salir" href="/">
                     <i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal" style="color: white;"></i>
                 </a>
             </div>
@@ -22,15 +22,15 @@
         </div>
         <form action="contactar.php" method="post">
             <div class="input-box">
-                <input type="text" placeholder="Nombre" name="nombre" required>
+                <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="email" placeholder="Correo" name="email" required>
+                <input type="email" placeholder="Correo" name="email" id="email" required>
                 <i class='bx bxl-gmail'></i>
             </div>
             <div class="input-box">
-                <textarea class="asunto" name="asunto" placeholder="Asunto"></textarea>
+                <textarea class="asunto" name="contenido" placeholder="Contenido" id="contenido"></textarea>
             </div>
             <button type="submit" class="btn">Enviar</button>
         </form>

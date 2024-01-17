@@ -120,6 +120,9 @@ body{
 .salir:hover{
     transform: scale(5px);
 }
+textarea{
+    resize: none;
+}
 
 @media screen and (max-width: 650px) {
     body{
